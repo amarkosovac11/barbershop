@@ -1,0 +1,494 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply Montserrat to headings */
+h1, h2, h3, .contact-title, .contact-info-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.navbar-Logo {
+    mix-blend-mode: multiply; 
+}
+
+/* Apply Open Sans to body text */
+body, p, .contact-description, .contact-info {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: transparent;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    z-index: 1;
+    font-size: 15px;
+}
+
+.navbar-scrolled {
+    background-color: black;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link {
+    color: white;
+    /* Set a consistent color */
+    position: relative;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link.active {
+    color: white;
+}
+
+.nav-link::after {
+    content: ' ';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+}
+
+/* SECTION 1: Hero Section */
+.header {
+    min-height: 100vh;
+    /* Full viewport height */
+    width: 100%;
+    background-image: url(img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8); /* Soft inner shadow */
+ 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+.text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 62px;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 18px;
+    color: #A38D78;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+@media(max-width: 700px) {
+    .text-box h1 {
+        font-size: 20px;
+    }
+
+    .header {
+        
+        background-position: left;
+    }
+}
+
+/* ABOUT US SECTION */
+.about-us {
+    background-color: #ffffff;
+    color: #333;
+    padding: 50px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    /* Space between text and line */
+}
+
+.about-us h2::after {
+    content: "";
+    display: block;
+    width: 125px;
+    /* Length of the line */
+    height: 3px;
+    /* Thickness of the line */
+    background-color: #C4A27A;
+    /* Line color */
+    margin: 8px auto 0;
+    /* Centering the line */
+}
+
+.about-us .container {
+    max-width: 1200px;
+    padding: 0 20px;
+    /* Adds padding to prevent content from touching edges */
+}
+
+.about-us .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Ensures wrapping on smaller screens */
+}
+
+.about-us .text-left {
+    text-align: left;
+}
+
+.about-text {
+    transform: translateX(-30px);
+    text-align: justify;
+}
+
+/* Carousel Styling */
+.about-carousel {
+    max-width: 110%;
+    transform: translateX(50px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.about-carousel .carousel-inner {
+    display: flex;
+    align-items: center;
+}
+
+.about-carousel .carousel-item img {
+    width: 100%;
+    /* Ensure images fill the container width */
+    height: 400px;
+    /* Set a fixed height (adjust as needed) */
+    object-fit: contain;
+    /* Crop images to fit without distortion */
+}
+
+/* Change color of carousel arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #333;
+    /* Change this to your desired color */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(1);
+    /* Optional: Ensures icons remain visible on dark background */
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+
+    .about-us h2 {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+    /* Tablets */
+    .about-us .row {
+        flex-direction: column;
+        /* Stacks text and carousel vertically */
+        text-align: center;
+    }
+
+    .about-text {
+        transform: none;
+        /* Reset translation */
+        text-align: center;
+        margin: 10px 0;
+        /* Adds spacing */
+    }
+
+    .about-carousel {
+        max-width: 80%;
+        /* Scale down carousel */
+        transform: none;
+        /* Reset translation */
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* Mobile devices */
+
+    .about-us h2 {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+    .about-text {
+        font-size: 14px;
+        /* Adjust text size for readability */
+    }
+
+    .about-carousel {
+        max-width: 90%;
+        /* Slightly larger for mobile */
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+  
+    .about-us,
+    .services {
+        padding: 30px 0;
+    }
+}
+
+
+
+/* SECTION 3: Contact */ 
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers vertically */
+    text-align: center;
+    background-color: #2C2A26;
+    opacity: 0.9;
+    padding: 60px 20px; /* ✅ Increased top/bottom padding for better spacing */
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    position: relative; /* Required for underline */
+    display: inline-block; /* Ensures the underline is only under the text */
+}
+
+.contact-title::after {
+    content: "";
+    display: block;
+    width: 200px; /* ✅ Fixed underline length */
+    height: 3px; /* ✅ Thickness of underline */
+    background-color: #C4A27A; /* ✅ Change to match About Us */
+    margin: 5px auto 0; /* ✅ Centers underline */
+}
+
+
+
+.contact-description {
+    color: rgb(165, 165, 165);
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 40px; /* ✅ More spacing below description */
+}
+
+/* Contact Info & Map Titles */
+.contact-info-title,
+.contact-map-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-top: 30px; /* ✅ Space above each title */
+    text-align: center; /* Align titles properly */
+    display: inline-block;
+    
+    border-bottom: 2px solid #C4A27A;
+    padding-bottom: 5px;
+    margin-bottom: 20px; /* ✅ Extra spacing below the title */
+}
+
+
+/* Responsive Layout */
+.contact-section .row {
+    display: flex;
+    flex-wrap: nowrap; /* Allows items to stack on small screens */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; /* ✅ Increased gap for better separation */
+}
+
+/* Contact Info */
+.contact-info {
+    margin-bottom: 0; /* No extra margin pushing the map down */
+    min-width: 300px;
+    padding: 20px;
+    flex: 1;
+    text-align: left;
+    /* color: rgb(165, 165, 165); */
+    color:#ffffff;
+}
+
+/* Google Maps Container */
+.contact-map {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+/* Make the iframe Responsive */
+.contact-map iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form */
+.contact-form-container {
+    background: #fff;
+    padding: 30px; /* ✅ Added more padding inside the form */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: 80px !important; /* ✅ More space above the form */
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-title {
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    width: 100%;
+}
+
+.contact-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #7e7e7e;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.contact-form button {
+    background-color: #808080;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #f44336;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+
+    .contact-info-title {
+        
+        display: block; /* Ensures proper centering */
+        width: fit-content;
+        margin: 0 auto 10px; /* Centers the title */
+        border-bottom: 2px solid #C4A27A;
+        padding-bottom: 5px;
+    }
+
+    .contact-description {
+        font-size: 1rem;
+    }
+
+    .contact-form-container {
+        padding: 15px;
+    }
+
+    .contact-section .row {
+        flex-direction: column;
+        gap: 20px; /* Less vertical gap on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-info-title {
+        
+
+        display: block; /* Ensures proper centering */
+        width: fit-content;
+        margin: 0 auto 10px; /* Centers the title */
+        border-bottom: 2px solid #C4A27A;
+        padding-bottom: 5px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-description {
+        font-size: 0.9rem;
+    }
+
+    .contact-form button {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .contact-section .row {
+        flex-direction: column;
+        gap: 20px; /* Less vertical gap on mobile */
+    }
+}
