@@ -3,7 +3,7 @@
 I built this project as a practice exercise to improve my front-end development skills. This is a simple page for Barber Shop, which i made using HTML, CSS and JS.
 
 You can check it on following link: 
-https://amarkosovac11.github.io/barbershop.github.io/
+https://amarkosovac11.github.io/barbershop/
 
 ## **Features**
 
